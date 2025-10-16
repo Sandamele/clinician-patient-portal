@@ -60,7 +60,7 @@ export function Navigation() {
               </Link>
             ))}
             <li onClick={handleSwitchAccount} className="flex items-center gap-2">
-              Switch ({role}) <Switch />
+              Switch Account Type ({role}) <Switch />
             </li>
             <li onClick={handleSignOut}>Logout</li>
             <Image
