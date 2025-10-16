@@ -93,7 +93,7 @@ export function Navigation() {
             </Link>
           ))}
           <li onClick={handleSwitchAccount} className="flex items-center gap-2 py-2 w-full">
-            Switch ({role}) <Switch />
+            Switch Account Type (role) <Switch />
           </li>
           <li onClick={handleSignOut} className="py-2 w-full text-left">
             Logout
