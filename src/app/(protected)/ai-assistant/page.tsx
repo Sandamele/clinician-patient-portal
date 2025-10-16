@@ -38,7 +38,7 @@ export default function Page() {
   };
 
   return (
-    <div className="flex items-center justify-center w-full">
+    <div className="flex items-center justify-center w-full mt-8">
       <div className="w-full h-[600px] bg-white dark:bg-slate-800 rounded-lg shadow-md flex flex-col overflow-hidden transition-colors">
         <div className="flex-1 overflow-y-auto">
           <ChatWindow messages={messages} loading={loading} />
