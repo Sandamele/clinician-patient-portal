@@ -13,7 +13,7 @@ export function Navigation() {
   const router = useRouter();
   const { role, setRole } = useRole();
   const [menuOpen, setMenuOpen] = useState(false);
-
+  console.log(role)
   const patientUrls = [
     { url: "/dashboard", name: "Dashboard" },
     { url: "/ai-assistant", name: "AI Assistant" },
@@ -27,7 +27,7 @@ export function Navigation() {
   const placeholderImage = "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png";
 
   const handleSwitchAccount = () => {
-    if (user?.role === "clinician") {
+    if (user?.role.replace(/^"(.*)"$/, "$1") === "clinician") {
       const newRole = role === "clinician" ? "patient" : "clinician";
       setRole(newRole);
     } else {
@@ -59,8 +59,8 @@ export function Navigation() {
                 {link.name}
               </Link>
             ))}
-            <li onClick={handleSwitchAccount} className="flex items-center gap-2">
-              Switch Account Type ({role}) <Switch />
+            <li className="flex items-center gap-2">
+              Switch Account Type ({role}) <Switch onClick={handleSwitchAccount} />
             </li>
             <li onClick={handleSignOut}>Logout</li>
             <Image
@@ -92,8 +92,8 @@ export function Navigation() {
               {link.name}
             </Link>
           ))}
-          <li onClick={handleSwitchAccount} className="flex items-center gap-2 py-2 w-full">
-            Switch Account Type (role) <Switch />
+          <li className="flex items-center gap-2 py-2 w-full">
+            Switch Account Type (role) <Switch onClick={handleSwitchAccount} />
           </li>
           <li onClick={handleSignOut} className="py-2 w-full text-left">
             Logout

@@ -15,10 +15,12 @@ import { User } from "@/types";
 import { useAuth } from "@/context/authContext";
 import { useRouter } from "next/navigation";
 import { getLastChars } from "@/lib/helper";
+import { useRole } from "@/context/RoleContext";
 
 export function SignInForm() {
   const [showPassword, setShowPassword] = useState(false);
   const router = useRouter();
+  const { setRole } = useRole();
   const initialValues = {
     email: "",
     password: "",
@@ -36,7 +38,6 @@ export function SignInForm() {
       const signInUser = await signInWithEmailAndPassword(auth, values.email.toLowerCase().trim(), values.password);
       const idToken = await signInUser.user.getIdToken();
 
-      // Fetch user's role
       const roleResponse = await fetch(`/api/auth/role?id=${signInUser.user.uid}`, {
         method: "GET",
         headers: { "Content-Type": "application/json" },
@@ -46,7 +47,7 @@ export function SignInForm() {
         throw new Error("Failed to fetch user role");
       }
 
-      const roleData = await roleResponse.json(); // Parse JSON
+      const roleData = await roleResponse.json();
       const role = roleData.role;
 
       const user: User = {
@@ -57,7 +58,7 @@ export function SignInForm() {
         role,
       };
 
-      localStorage.setItem("role", JSON.stringify(role));
+      setRole(role);
       signIn(user);
       router.push("/dashboard");
     } catch (error: any) {

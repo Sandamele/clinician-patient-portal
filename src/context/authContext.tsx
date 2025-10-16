@@ -19,7 +19,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         setUser(null);
       }
     }
-    setLoading(false); // Done loading after checking cookie
+    setLoading(false);
   }, []);
 
   const signIn = (user: User) => {
@@ -43,7 +43,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   );
 }
 
-// Hook to use auth context
 export function useAuth() {
   const context = useContext(AuthContext);
   if (!context) throw new Error("useAuth must be used within an AuthProvider");

@@ -7,7 +7,7 @@ export default function Page() {
   const { role } = useRole();
   const router = useRouter();
   useEffect(() => {
-    if (role !== "clinician") router.push("/dashboard");
+    if (role.replace(/^"(.*)"$/, "$1") !== "clinician") router.push("/dashboard");
   }, []);
   return (
     <div>

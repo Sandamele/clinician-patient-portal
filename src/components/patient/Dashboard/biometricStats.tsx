@@ -8,7 +8,7 @@ export function BiometricStats({ biometrics = [] }: BiometricStatsProps) {
 
   const handleSetActiveStat = (id: string) => {
     const params = new URLSearchParams(searchParams.toString());
-    params.set("activeStat", id); // set or update activeStat
+    params.set("activeStat", id); 
     router.push(`${window.location.pathname}?${params.toString()}`);
   };
   const activeStat = searchParams.get("activeStat") ?? "heartRate";

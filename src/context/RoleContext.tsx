@@ -8,7 +8,7 @@ export function RoleProvider({ children }: { children: ReactNode }) {
   const [role, setRoleState] = useState<string>("");
 
   useEffect(() => {
-    const storedRole = localStorage.getItem("role") || "";
+    const storedRole = localStorage.getItem("role") || role;
     setRoleState(storedRole);
   }, []);
 
