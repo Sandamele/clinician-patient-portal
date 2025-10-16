@@ -6,7 +6,6 @@ import { Loader } from "@/components/ui/loader";
 import { Navigation } from "@/components/navigation";
 import { Theme } from "@/components/theme";
 
-
 export default function ProtectedLayout({ children }: { children: ReactNode }) {
   const { user, loading } = useAuth();
   const router = useRouter();

@@ -1,6 +1,4 @@
-
 import { NextRequest, NextResponse } from "next/server";
-
 
 export async function GET(request: NextRequest) {
   try {
@@ -15,10 +13,7 @@ export async function GET(request: NextRequest) {
     return NextResponse.json(mockedResponse);
   } catch (error) {
     console.error("GET /api/ai error:", error);
-    return NextResponse.json(
-      { error: "Failed to fetch AI response" },
-      { status: 500 }
-    );
+    return NextResponse.json({ error: "Failed to fetch AI response" }, { status: 500 });
   }
 }
 
@@ -38,15 +33,12 @@ export async function POST(request: NextRequest) {
     return NextResponse.json(mockedResponse);
   } catch (error) {
     console.error("POST /api/ai error:", error);
-    return NextResponse.json(
-      { error: "Failed to process AI request" },
-      { status: 500 }
-    );
+    return NextResponse.json({ error: "Failed to process AI request" }, { status: 500 });
   }
 }
 
 function delay(ms: number) {
-  return new Promise(resolve => setTimeout(resolve, ms));
+  return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
 const mockedReplies = [
@@ -56,7 +48,7 @@ const mockedReplies = [
   "Consider adjusting your medication schedule as we discussed.",
   "Your recent test results look within normal ranges.",
   "I recommend maintaining a balanced diet and regular exercise.",
-  "Could you provide more details about your current condition?"
+  "Could you provide more details about your current condition?",
 ];
 
 function getRandomReply() {

@@ -9,8 +9,8 @@ The Clinician & Patient Portal is designed to provide a clean and intuitive user
 - **User Registration**  
   Users can register using **Email/Password** or **Google**.  
   During registration, the user chooses an account type:
-    - **Patient**
-    - **Clinician**
+  - **Patient**
+  - **Clinician**
 
 - **User Login**  
   Users can log in with the same methods (Email or Google).  
@@ -25,9 +25,9 @@ The Clinician & Patient Portal is designed to provide a clean and intuitive user
 
 - **Patient Dashboard**  
   When logged in as a patient, the dashboard displays:
-    - **Biometric Stats Cards**: Key health data such as heart rate, steps, or sleep.
-    - **Line Chart**: A time-series chart showing biometric data trends over a selected time range (7, 14, or 30 days).
-    - A clean and minimal interface helps users focus on their personal health metrics.
+  - **Biometric Stats Cards**: Key health data such as heart rate, steps, or sleep.
+  - **Line Chart**: A time-series chart showing biometric data trends over a selected time range (7, 14, or 30 days).
+  - A clean and minimal interface helps users focus on their personal health metrics.
 
 - **Clinician Dashboard**  
   When logged in as a clinician, the dashboard displays a simple header:
@@ -58,6 +58,7 @@ This structure keeps the navigation consistent across roles while restricting ac
 ---
 
 ### 5. Patient Lookup
+
 - This page is **only accessible to clinicians**.
 
 ---
@@ -92,9 +93,9 @@ This structure keeps the navigation consistent across roles while restricting ac
 - **Future-Friendly**  
   The AI Assistant and clinician dashboard are designed with expansion in mind, allowing for future integration with real data and workflows.
 
-
 ## Trade Off
-- **Unit Testing**  
+
+- **Unit Testing** for
   Focus was placed on core feature stability rather than full test coverage. This speeds up development but increases the chance of regressions. More tests can be added as the project grows.
 
 - **Limited SEO for Protected Pages**  

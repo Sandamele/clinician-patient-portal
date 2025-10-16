@@ -2,11 +2,12 @@ import { useState } from "react";
 import { useFetch } from "@/hooks/useFetcher";
 import { useAuth } from "@/context/authContext";
 import { Loader } from "@/components/ui/loader";
-import { LineChart } from "@/components/LineChart";
 import { useSearchParams } from "next/navigation";
-import { DateRange } from "@/components/DateRange";
-import { BiometricStats } from "@/components/patient/Dashboard/BiometricStats";
+
 import { Welcome } from "@/components/welcome";
+import { DateRange } from "@/components/dateRange";
+import { LineChart } from "@/components/lineChart";
+import { BiometricStats } from "@/components/patient/Dashboard/biometricStats";
 
 export function PatientDashboard() {
   const { user } = useAuth();

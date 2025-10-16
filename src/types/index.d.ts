@@ -63,13 +63,13 @@ export interface ChartProps {
 export type AiMessageType = {
   type: "user" | "ai";
   text: string;
-}
+};
 
 export type ChatWindowProps = {
   messages: AiMessageType[];
   loading: boolean;
-}
+};
 export type ChatInputProps = {
   onSend: (text: string) => void;
   loading: boolean;
-}
+};
